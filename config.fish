@@ -6,7 +6,7 @@ function fish_title
 end
 
 function fish_greeting
-    echo "  -- " \t\t\t\t\t "     " (set_color red)(date +%y-%m-%d\ %a\ \ \ %T)(set_color normal) "     --"
+    set_color normal
     echo "  --        __  ___   _________  __ ____  ____________________________      --  "
     echo "  --       / / / / | / / ____/ |/ // __ \/ ____/ ____/_  __/ ____/ __ \     --  "
     echo "  --      / / / /  |/ / __/  |   // /_/ / __/ / /     / / / __/ / / / /     --  "
@@ -15,37 +15,37 @@ function fish_greeting
     echo "  --                                                                        --  "
     echo "  --                             [ UNEXPECTED ]                             --  "
     echo "  --                                                                        --  "
+    echo "                                                                                "
+    set_color green
+    echo "  [ $(date +%m-%d\ %a\ \ %T) ]"
 end
 
+# ENABLE VI-MODE
 function fish_user_key_bindings
-    # Execute this once per mode that emacs bindings should be used in
+    # ENABLE EMACS KEYBINDINGS
     fish_default_key_bindings -M insert
 
-    # Then execute the vi-bindings so they take precedence when there's a conflict.
-    # Without --no-erase fish_vi_key_bindings will default to
-    # resetting all bindings.
-    # The argument specifies the initial mode (insert, "default" or visual).
+    # ENABLE VI KEYBINDINGS
     fish_vi_key_bindings --no-erase insert
 end
 
-# Emulates vim's cursor shape behavior
-# Set the normal and visual mode cursors to a block
+# SET VI-MODE CURSOR SHAPE
 set fish_cursor_default block
-# Set the insert mode cursor to a line
-set fish_cursor_insert line
-# Set the replace mode cursor to an underscore
-set fish_cursor_replace_one underscore
-# The following variable can be used to configure cursor shape in
-# visual mode, but due to fish_cursor_default, is redundant here
+set fish_cursor_insert line blink
 set fish_cursor_visual block
+set fish_cursor_replace_one underscore
 
+bind -M default 'L' end-of-line repaint
+bind -M default 'H' beginning-of-line repaint
+bind -M default ' ' accept-autosuggestion
 
+# SET PROMPT
 function fish_prompt
-    echo (set_color red) (prompt_pwd) (set_color green)'[' (set_color normal)
+    echo "$(set_color red) $(prompt_pwd)$(set_color green) [ $(set_color normal)"
 end
 
 function fish_right_prompt
-    echo (set_color green)']' (set_color normal)(date +%r) ''
+    echo "$(set_color green) ] $(set_color normal)$(date +%r) "
 end
 
 if status is-interactive
@@ -76,6 +76,8 @@ alias top='glances'
 alias f='trans -l zh -to zh -j -speak -indent 8'
 
 
+
+
 # translate-shell cmatrix
 
 # exa -> ls
@@ -86,3 +88,4 @@ alias f='trans -l zh -to zh -j -speak -indent 8'
 # bat -> cat
 # httpie -> curl
 # mycli -> mysql
+
