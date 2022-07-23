@@ -1,0 +1,106 @@
+
+env:
+  http_proxy: http://192.168.42.129:7890/
+  https_proxy: http://192.168.42.129:7890/
+
+# 热加载
+live_config_reload: false
+
+mouse_bindings:
+  - { mouse: Right, action: Paste }
+
+key_bindings:
+  - { key: Escape, mods: Shift, action: ToggleViMode }
+  - { key: J, mods: Shift, mode: Vi, action: ScrollHalfPageDown }
+  - { key: K, mods: Shift, mode: Vi, action: ScrollHalfPageUp }
+
+window:
+  # GTK 主题
+  gtk_theme_variant: dark
+
+  # 透明度
+  opacity: 0.80
+
+  # 标题设置
+  # title: 'UNEXPECTED' # 是否开启动态标题 dynamic_title: true
+
+  # 是否显示顶栏 full / none
+  decorations: full
+
+  # 边距
+  padding:
+    x: 0
+    y: 0
+  # 窗口大小
+  dimensions:
+    columns: 195
+    lines: 40
+
+font:
+  # 字体大小
+  size: 11
+  # 字间距
+  offset:
+    x: 0
+    y: 0
+
+  normal:
+    family: 'JetBrainsMono Nerd Font Mono'
+    style: Regular
+
+  bold:
+    family: 'JetBrainsMono Nerd Font Mono'
+    style: Bold
+
+  italic:
+    family: 'JetBrainsMono Nerd Font Mono'
+    style: Italic
+
+  bold_itali:
+    family: 'JetBrainsMono Nerd Font Mono'
+    style: Bold Italic
+
+# Colors (Dracula)
+colors:
+  # Default colors
+  primary:
+    background: '#222222'
+    foreground: '#525252'
+
+  # Normal colors
+  normal:
+    black:   '#222222'
+    red:     '#E73E95'
+    green:   '#BBE73D'
+    yellow:  '#DEA600'
+    purple:  '#AF87D7'
+    bpurple: '#614F97'
+    orange:  '#FF9121'
+    blue:    '#008FBF'
+    magenta: '#FF79C6'
+    cyan:    '#8BE9FD'
+    white:   '#DDDDDD'
+
+  bright:
+    black:   '#222222'
+    red:     '#E73E95'
+    green:   '#BBE73D'
+    yellow:  '#DEA600'
+    purple:  '#AF87D7'
+    bpurple: '#614F97'
+    orange:  '#FF9121'
+    blue:    '#008FBF'
+    magenta: '#FF79C6'
+    cyan:    '#8BE9FD'
+    white:   '#DDDDDD'
+
+selection:
+  semantic_escape_chars: ",`|\"' ()[]{}<>\t@="
+  save_to_clipboard: true
+
+mouse:
+  hide_when_typing: true
+
+url:
+  modifiers: Command
+
