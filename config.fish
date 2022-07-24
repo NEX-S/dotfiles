@@ -79,17 +79,3 @@ alias grep='ripgrep'
 alias top='glances'
 alias f='trans -l zh -to zh -j -speak -indent 8'
 
-
-
-
-# translate-shell cmatrix
-
-# exa -> ls
-# fd / fzf  -> find
-# ripgrep -> grep
-# htop / glances / gtop -> top
-# ctop -> docker
-# bat -> cat
-# httpie -> curl
-# mycli -> mysql
-
