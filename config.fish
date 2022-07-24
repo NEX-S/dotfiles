@@ -62,6 +62,10 @@ alias plugconf='nvim /home/nex/.config/nvim/lua/core/plugins.lua'
 alias setconf='nvim /home/nex/.config/nvim/lua/core/options.lua'
 alias mapconf='nvim /home/nex/.config/nvim/lua/core/keymaps.lua'
 
+function rm
+    mv -i $argv ~/.local/share/Trash/files/
+end
+
 alias yay='yay --noconfirm'
 alias pacman='pacman --noconfirm'
 
